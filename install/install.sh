@@ -26,10 +26,6 @@ git submodule update
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
-git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-cd ~/.rbenv && src/configure && make -C src
-cd ~
-
 # link the dotfiles
 mkdir ~/.config
 ln -s ~/dotfiles/agignore ~/.agignore
@@ -38,7 +34,6 @@ ln -s ~/dotfiles/gemrc ~/.gemrc
 ln -s ~/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/dotfiles/gitignore ~/.gitignore
 ln -s ~/dotfiles/nvim ~/.config/nvim
-ln -s ~/dotfiles/ruby-version ~/.ruby-version
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/zsh ~/.zsh
 ln -s ~/dotfiles/zsh/zshrc ~/.zshrc

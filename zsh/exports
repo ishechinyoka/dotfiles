@@ -10,9 +10,6 @@ export PATH=$HOME/.composer/vendor/bin:$PATH
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export MANPATH=/usr/local/share/man:$MANPATH
 
-# rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-
 # zsh-completions
 fpath=($HOME/dotfiles/zsh/zsh-completions/src $fpath)
 
