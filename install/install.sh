@@ -10,7 +10,6 @@ apt-get install silversearcher-ag
 apt-get install software-properties-common
 apt-get install tmux
 apt-get install wget
-apt-get install rbenv
 
 add-apt-repository ppa:neovim-ppa/stable
 apt-get update
@@ -55,7 +54,7 @@ tic ~/dotfiles/other/xterm-256color.terminfo
 # now restart your terminal/iterm2 and hope for the best
 
 # set zsh to the default
-sudo vim /etc/shells
-chsh -s /usr/local/bin/zsh
+vim /etc/shells
+chsh -s /usr/bin/zsh
 /usr/bin/env zsh
-sudo mv /etc/zshenv /etc/zprofile
+mv /etc/zshenv /etc/zprofile

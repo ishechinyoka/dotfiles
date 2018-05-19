@@ -3,10 +3,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # shell
-export SHELL=/usr/local/bin/zsh
-
-# brew CASK
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+export SHELL=/usr/bin/zsh
 
 # paths
 export PATH=$HOME/.composer/vendor/bin:$PATH
@@ -24,8 +21,8 @@ export COPY_EXTENDED_ATTRIBUTES_DISABLE=true
 export COPYFILE_DISABLE=true
 
 # editor
-export EDITOR="/usr/local/bin/nvim"
-export VISUAL="/usr/local/bin/nvim"
+export EDITOR="/usr/bin/nvim"
+export VISUAL="/usr/bin/nvim"
 
 # disable auto titling fixes tmux window
 export DISABLE_AUTO_TITLE=true
