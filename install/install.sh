@@ -10,6 +10,7 @@ apt-get install silversearcher-ag
 apt-get install software-properties-common
 apt-get install tmux
 apt-get install wget
+apt-get install rbenv
 
 add-apt-repository ppa:neovim-ppa/stable
 apt-get update
@@ -26,16 +27,26 @@ git submodule update
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+cd ~/.rbenv && src/configure && make -C src
+cd ~
+
+pip3 install neovim
+curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+sh installer.sh ~/.config/nvim/dein
+
 # link the dotfiles
+mkdir ~/.config
 ln -s ~/dotfiles/agignore ~/.agignore
 ln -s ~/dotfiles/editorconfig ~/.editorconfig
+ln -s ~/dotfiles/gemrc ~/.gemrc
 ln -s ~/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/dotfiles/gitignore ~/.gitignore
+ln -s ~/dotfiles/nvim ~/.config/nvim
+ln -s ~/dotfiles/ruby-version ~/.ruby-version
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
-ln -s ~/dotfiles/vim ~/.vim
-ln -s ~/dotfiles/vimrc ~/.vimrc
 ln -s ~/dotfiles/zsh ~/.zsh
-ln -s ~/dotfiles/zshrc ~/.zshrc
+ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
 
 # set xterm/screen terminals to enable italic fonts in terminal
 tic ~/dotfiles/other/xterm-256color.terminfo
