@@ -1,90 +1,50 @@
 #!/usr/bin/env bash
+# install some neccessary packages
+apt-get install build-essential
+apt-get install curl
+apt-get install git
+apt-get install git-flow
+apt-get install git-ftp
+apt-get install python-software-properties
+apt-get install silversearcher-ag
+apt-get install software-properties-common
+apt-get install tmux
+apt-get install wget
 
-# install xcode and other software from the app store
-# everything neccessary first - command line tools
-xcode-select --install
-
-read -p "Press any key to continue... " -n1 -s
-
-# install homebrew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew doctor
-
-# brew paths
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-
-# install some neccessary brew packages
-brew install clipper
-brew install fzf
-brew install git
-brew install neovim --HEAD
-brew install python3
-brew install tmux
-brew install zsh
-read -p "Press any key to continue... " -n1 -s
+add-apt-repository ppa:neovim-ppa/stable
+apt-get update
+apt-get install neovim
+apt-get install python-dev python-pip python3-dev python3-pip
+apt-get install python-dev python-pip python3-dev
+apt-get install python3-setuptools
+easy_install3 pip
 
 # install all submodules
 git submodule init
 git submodule update
-read -p "Press any key to continue... " -n1 -s
+
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
 
 # link the dotfiles
-mkdir ~/.config
 ln -s ~/dotfiles/agignore ~/.agignore
 ln -s ~/dotfiles/editorconfig ~/.editorconfig
-ln -s ~/dotfiles/gemrc ~/.gemrc
 ln -s ~/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/dotfiles/gitignore ~/.gitignore
-ln -s ~/dotfiles/hammerspoon ~/.hammerspoon
-ln -s ~/dotfiles/karabiner ~/.config/karabiner
-ln -s ~/dotfiles/nvim ~/.config/nvim
-ln -s ~/dotfiles/ruby-version ~/.ruby-version
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
+ln -s ~/dotfiles/vim ~/.vim
+ln -s ~/dotfiles/vimrc ~/.vimrc
 ln -s ~/dotfiles/zsh ~/.zsh
-ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
-read -p "Press any key to continue... " -n1 -s
-
-# install fzf
-/usr/local/opt/fzf/install
-read -p "Press any key to continue... " -n1 -s
-
-# this is the minimal software and fonts used
-brew cask install caskroom/fonts/font-fira-code
-brew cask install forklift
-brew cask install hammerspoon
-brew cask install nextcloud
-read -p "Press any key to continue... " -n1 -s
-
-brew tap homebrew/services
-
-# clipper
-mkdir -p ~/Library/LaunchAgents
-brew services start clipper
-read -p "Press any key to continue... " -n1 -s
-
-# install deps + plugins for neovim
-pip3 install neovim
-curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-sh installer.sh ~/.config/nvim/dein
-read -p "Press any key to continue... " -n1 -s
-rm installer.sh
+ln -s ~/dotfiles/zshrc ~/.zshrc
 
 # set xterm/screen terminals to enable italic fonts in terminal
 tic ~/dotfiles/other/xterm-256color.terminfo
-read -p "Press any key to continue... " -n1 -s
 
-# set terminal to xterm-256color!
-# now restart your terminal and hope for the best
+# set iterm terminal to xterm-256color!
+# now restart your terminal/iterm2 and hope for the best
 
 # set zsh to the default
 sudo vim /etc/shells
-read -p "Press any key to continue... " -n1 -s
 chsh -s /usr/local/bin/zsh
-read -p "Press any key to continue... " -n1 -s
 /usr/bin/env zsh
-read -p "Press any key to continue... " -n1 -s
 sudo mv /etc/zshenv /etc/zprofile
-read -p "Press any key to continue... " -n1 -s
-sudo launchctl config user path $PATH
-read -p "Press any key to continue... " -n1 -s
