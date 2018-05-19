@@ -30,10 +30,6 @@ git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 cd ~/.rbenv && src/configure && make -C src
 cd ~
 
-pip3 install neovim
-curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-sh installer.sh ~/.config/nvim/dein
-
 # link the dotfiles
 mkdir ~/.config
 ln -s ~/dotfiles/agignore ~/.agignore
@@ -46,6 +42,10 @@ ln -s ~/dotfiles/ruby-version ~/.ruby-version
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/zsh ~/.zsh
 ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
+
+pip3 install neovim
+curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+sh installer.sh ~/.config/nvim/dein
 
 # set xterm/screen terminals to enable italic fonts in terminal
 tic ~/dotfiles/other/xterm-256color.terminfo
