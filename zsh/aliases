@@ -53,5 +53,6 @@ alias np="npm run production"
 alias npmre='rm -f package-lock.json && rm -rf node_modules && npm install'
 
 # easy hosts / apache / php editing
-alias hosts='sudo $EDITOR /etc/hosts'
+alias hosts='$EDITOR /etc/hosts'
 alias vhosts='$EDITOR /etc/nginx'
+alias grep = '/usr/bin/grep $GREP_OPTIONS'
