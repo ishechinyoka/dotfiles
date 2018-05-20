@@ -1,3 +1,6 @@
+# pure prompt
+fpath=( "$HOME/.zfunctions" $fpath )
+
 # Load the functions, aliases and exports
 for file in ~/dotfiles/zsh/{exports,aliases,functions}; do
   [ -r "$file" ] && source "$file"
@@ -67,3 +70,4 @@ export NVM_DIR="$HOME/.nvm"
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
